@@ -5,19 +5,21 @@ const outFile = './test.txt';
 
 try {
     // remove file
-    fs.unlink(outFile, (err) => {
-        if (err) throw err;
-    })
+    if (fs.existsSync(outFile)) {
+        fs.unlink(outFile, (err) => {
+            if (err) throw err;
+        })
+    }
 
     // read yaml file
     let yamls = fs.readFileSync(urlFile, 'utf-8');
-        yamls = yaml.load(yamls);
+    yamls = yaml.load(yamls);
 
     // for
     for (const yaml of yamls) {
         let yaml_domain = yaml['domain'];
 
-        yaml_domain = yaml_domain.replace(/(.+)/g,'$1\n')
+        yaml_domain = yaml_domain.replace(/(.+)/g, '$1\n')
         fs.appendFileSync(outFile, yaml_domain, { flag: 'a+' }, err => {
             if (err) throw err;
         });
