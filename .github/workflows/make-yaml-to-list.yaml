@@ -9,23 +9,23 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: checkout repository
-            uses: actions/checkout@v3
-            with:
-                fetch-depth: 0
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: 0
             - name: setup node
-            uses: actions/setup-node@v3
-            with:
-                node-version: "16"
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "16"
             - name: Run script
-            run: |
-                npm run test
+              run: |
+                  npm run test
             - name: Commit files
-            run: |
-                git config --local user.email "github-actions[bot]@users.noreply.github.com"
-                git config --local user.name "github-actions[bot]"
-                git commit -a -m "Add changes"
+              run: |
+                  git config --local user.email "github-actions[bot]@users.noreply.github.com"
+                  git config --local user.name "github-actions[bot]"
+                  git commit -a -m "Add changes"
             - name: Push changes
-            uses: ad-m/github-push-action@master
-            with:
-                brach: ${{ github.head_ref }}
-                github_token: ${{ secrets.GITHUB_TOKEN }}
+              uses: ad-m/github-push-action@master
+              with:
+                  branch: ${{ github.head_ref }}
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
