@@ -1,0 +1,23 @@
+{
+  "name": "github-actions-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js ./test.yaml"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/primenon/github-actions-sample.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/primenon/github-actions-sample/issues"
+  },
+  "homepage": "https://github.com/primenon/github-actions-sample#readme",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
