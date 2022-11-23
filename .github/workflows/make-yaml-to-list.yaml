@@ -1,9 +1,11 @@
-name: make test.yaml to test.txt on JavaScript(node.js)
+name: make list file
 run-name: make list file
 on:
     push:
         branches:
             - main
+        paths:
+            - 'test.yaml'
 jobs:
     build:
         runs-on: ubuntu-latest
